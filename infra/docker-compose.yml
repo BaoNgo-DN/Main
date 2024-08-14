@@ -11,3 +11,10 @@ services:
       - AWS_SESSION_TOKEN=${AWS_SESSION_TOKEN}
       - AWS_DEFAULT_REGION=us-east-1
       - TF_WORKSPACE=${TF_WORKSPACE}
+
+
+#Docker Image: Uses hashicorp/terraform:1.6.2 to run Terraform commands.
+#Volumes: Mounts local directories setup and deploy into the container for access to necessary files.
+#Working Directory: Sets /tf as the working directory inside the container.
+#Environment Variables: Configures AWS credentials from host environment to the container to enable interactions with AWS services.
+# This key is used for authenticating API requests to AWS

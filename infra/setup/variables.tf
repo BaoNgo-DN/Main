@@ -1,6 +1,6 @@
 variable "tf_state_bucket" {
   description = "Name of S3 bucket in AWS for storing TF state"
-  default     = "devops-recipe-app-api-state"
+  default     = "devops-recipe-app-tf-state-baongo-dn"
 }
 
 variable "tf_state_lock_table" {
@@ -15,5 +15,5 @@ variable "project" {
 
 variable "contact" {
   description = "Contact name for tagging resources"
-  default     = "mark@example.com"
+  default     = "lequocbaongo@gmail.com"
 }
