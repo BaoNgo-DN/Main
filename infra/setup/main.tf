@@ -1,4 +1,3 @@
-# use AWS provider
 
 terraform {
   required_providers {
@@ -22,7 +21,6 @@ terraform {
   }
 }
 
-#configures the AWS provider
 provider "aws" {
   region = "us-east-1"
 
@@ -38,7 +36,4 @@ provider "aws" {
 }
 
 
-# required_providers: Specifies the required version and source for the AWS provider.
-# backend: Configures S3 as the backend to store the Terraform state file, using a DynamoDB table for state locking.
-# provider: Sets the AWS region and applies default tags to resources for better management and identification.
 
