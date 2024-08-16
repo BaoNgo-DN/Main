@@ -1,9 +1,6 @@
 # DevOps Deployment Automation with Terraform, AWS and Docker - Starter Code
 
 
-
-It contains the code you should have by the end of our [Build a Backend REST API with Python & Django REST Framework - Advanced](https://londonapp.dev/c2) course. We've created this snapshot, in-case we update the aforementioned course in the future.
-
 ## Local Development
 
 ### Running Project
