@@ -2,6 +2,7 @@ name: Test and Lint
 
 on:
   workflow_call:
+    # declare secrets as required
     secrets:
       DOCKERHUB_USER:
         required: true
@@ -11,9 +12,11 @@ on:
         description: "Token for DockerHub auth"
 
 jobs:
+  # job id
   python:
     name: Python
     runs-on: ubuntu-22.04
+    # authenticate to docker hub with github action
     steps:
       - name: Login to Docker Hub
         uses: docker/login-action@v3
@@ -29,6 +32,8 @@ jobs:
       - name: Python flake8
         run: docker compose run --rm app sh -c "flake8"
         # run lint tool called flake8
+
+# authenticate to docker hub > checkout code > run unit test for python > run lint tool called flake8
 
   terraform:
     name: Terraform
@@ -50,3 +55,10 @@ jobs:
           docker compose run --rm terraform -chdir=setup/ fmt -check
           docker compose run --rm terraform -chdir=deploy/ validate
           docker compose run --rm terraform -chdir=deploy/ fmt -check
+
+# login to docker hub > check out  > test terraform code      
+# -bankend=false disables the backend initialization, meaning won't connect to a remote backend like S3 or Terraform Cloud, 
+# which is commonly used to store the state file. 
+# This might be used to perform a dry-run initialization or to test locally.
+# fmt - check: ensures the command doesn't actually format the files 
+# but instead returns an exit code if the files aren't formatted correctly.

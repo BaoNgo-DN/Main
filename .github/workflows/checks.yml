@@ -12,4 +12,5 @@ jobs:
       DOCKERHUB_USER: ${{ vars.DOCKERHUB_USER }}
       DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
 # vars.DOCKERHUB_USER and secrets.DOCKERHUB_TOKEN are value retrieved from Github action variable and secret settings
-# DOCKERHUB_USER and DOCKERHUB_TOKEN are defined in "test-and-lint.yml" files 
+# DOCKERHUB_USER and DOCKERHUB_TOKEN are defined in "test-and-lint.yml" files
+# check the trigger condition between different yml files under .github/workflows to see which workflow they belong to 
