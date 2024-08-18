@@ -56,5 +56,7 @@ jobs:
           docker compose run --rm terraform -chdir=deploy/ workspace select -or-create $workspace
           docker compose run --rm terraform -chdir=deploy/ apply -auto-approve
 
- #Line 36: authenticate docker client to AWS ECR
- #Line 38, 40: vars.ECR_REPO_APP are defined from GitHub Action variables
+ # Line 27: $GITHUB_REF:a GitHub Actions environment variable that contains the full reference of the branch/tag that triggered workflow. 
+ # For example, if workflow was triggered by a push to the prod branch, GITHUB_REF would be refs/heads/prod
+ # Line 36: authenticate docker client to AWS ECR
+ # Line 38, 40: vars.ECR_REPO_APP are defined from GitHub Action variables
