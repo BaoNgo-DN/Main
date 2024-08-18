@@ -7,14 +7,14 @@ terraform {
   }
 
   backend "s3" {
-    bucket               = "devops-recipe-app-tf-state-baongo-dn"
-    key                  = "tf-state-deploy"
+    bucket = "devops-recipe-app-tf-state-baongo-dn"
+    key    = "tf-state-deploy"
     # file name of tf state file
     workspace_key_prefix = "tf-state-deploy-env"
     # Path folder to tf state file, eg: workspace_key_prefix/something/key
-    region               = "us-east-1"
-    encrypt              = true
-    dynamodb_table       = "devops-recipe-app-api-tf-lock"
+    region         = "us-east-1"
+    encrypt        = true
+    dynamodb_table = "devops-recipe-app-api-tf-lock"
   }
 }
 
